@@ -4,20 +4,24 @@
  * @Author: zhang jianjun
  * @Date: 2022-09-13 11:47:35
  * @LastEditors: zhang jianjun
- * @LastEditTime: 2022-11-03 14:37:27
+ * @LastEditTime: 2022-11-03 17:22:50
 -->
 <template>
   <div>
-    <virsualTable :height="400" :data="data"></virsualTable>
+    <!-- <virsualTable :height="400" :data="data"></virsualTable> -->
+    <iViewTable :columns="columns" :data="data" :height="400" :width="400"></iViewTable>
+    <!-- <Table :columns="columns" :data="data" :height="400" :width="400"></Table> -->
   </div>
 </template>
 
 <script>
 import virsualTable from './virsualTable.vue'
+import iViewTable from './iVirsualTable'
 export default {
   name: 'HelloWorld',
   components: {
-    virsualTable
+    virsualTable,
+    iViewTable
   },
   data() {
     return {
@@ -44,7 +48,7 @@ export default {
     }
   },
   created() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10000; i++) {
       this.data.push({
         name: 'zs',
         age: i
