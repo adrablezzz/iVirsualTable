@@ -146,7 +146,7 @@
     // import Dropdown from '../dropdown/dropdown.vue';
     // import DropdownMenu from '../dropdown/dropdown-menu.vue';
     // import Spin from '../spin/spin.vue';
-    import { Dropdown, DropdownMenu, Spin} from 'view-design';
+    import { Dropdown, DropdownMenu, Spin} from 'view-design'; // 将table单独提取出来后
     import { oneOf, getStyle, deepCopy, getScrollBarSize } from 'view-design/src/utils/assist';
     import { on, off } from 'view-design/src/utils/dom';
     import Csv from 'view-design/src/utils/csv';
@@ -154,7 +154,7 @@
     import Locale from 'view-design/src/mixins/locale';
     import elementResizeDetectorMaker from 'element-resize-detector';
     import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './util';
-    import { t } from 'view-design/src/locale'
+    import { t } from 'view-design/src/locale' // 4.3.2问题
 
     const prefixCls = 'ivu-table';
 
@@ -351,7 +351,8 @@
         computed: {
             localeNoDataText () {
                 if (this.noDataText === undefined) {
-                    return t('i.table.noDataText');
+                    return t('i.table.noDataText'); // 4.3.2问题
+                    // return this.t('i.table.noDataText');
                 } else {
                     return this.noDataText;
                 }
@@ -1556,5 +1557,6 @@
     };
 </script>
 <!-- <style lang="less">
+    // 4.3.2问题
     @import url('~view-design/src/styles/index.less');
 </style> -->
