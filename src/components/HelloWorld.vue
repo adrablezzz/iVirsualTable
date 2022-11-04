@@ -4,7 +4,7 @@
  * @Author: zhang jianjun
  * @Date: 2022-09-13 11:47:35
  * @LastEditors: zhang jianjun
- * @LastEditTime: 2022-11-03 17:22:50
+ * @LastEditTime: 2022-11-03 18:25:58
 -->
 <template>
   <div>
@@ -48,7 +48,7 @@ export default {
     }
   },
   created() {
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 1000; i++) {
       this.data.push({
         name: 'zs',
         age: i

@@ -154,6 +154,7 @@
     import Locale from 'view-design/src/mixins/locale';
     import elementResizeDetectorMaker from 'element-resize-detector';
     import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './util';
+    import { t } from 'view-design/src/locale'
 
     const prefixCls = 'ivu-table';
 
@@ -350,21 +351,21 @@
         computed: {
             localeNoDataText () {
                 if (this.noDataText === undefined) {
-                    return this.t('i.table.noDataText');
+                    return t('i.table.noDataText');
                 } else {
                     return this.noDataText;
                 }
             },
             localeNoFilteredDataText () {
                 if (this.noFilteredDataText === undefined) {
-                    return this.t('i.table.noFilteredDataText');
+                    return t('i.table.noFilteredDataText');
                 } else {
                     return this.noFilteredDataText;
                 }
             },
             localeSumText () {
                 if (this.sumText === undefined) {
-                    return this.t('i.table.sumText');
+                    return t('i.table.sumText');
                 } else {
                     return this.sumText;
                 }
@@ -1118,7 +1119,6 @@
                 let preNum = Math.floor(scrollTop / this.itemHeight)
                 this.startIndex = preNum > this.restNum ? preNum - this.restNum : 0
                 this.endIndex = this.startIndex + this.clientNum + this.restNum * 2
-                console.log(scrollTop,this.startIndex,this.endIndex)
             },
             handleFixedMousewheel(event) {
                 let deltaY = event.deltaY;
@@ -1555,3 +1555,6 @@
         }
     };
 </script>
+<!-- <style lang="less">
+    @import url('~view-design/src/styles/index.less');
+</style> -->
